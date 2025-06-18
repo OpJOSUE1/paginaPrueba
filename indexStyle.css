@@ -1,0 +1,346 @@
+* {
+    margin: 0;
+    padding: 0;
+    
+}
+body {
+    background: url('imagenes/textura-madera.jpg');
+    font-family: 'Georgia', serif;
+    background-repeat: repeat;
+    background-position: fixed;
+    background-size: 100%;
+    color: #3e2f1c;
+    width: 100%;
+    height: 1500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* HEADER */
+header {
+    background-color: rgba(255, 248, 220, 0.95);
+    background-size: cover;
+    color: white;
+    width: 80%;
+    height: 10%;
+    display: flex;
+    flex-direction: column;
+}
+.logo {
+    width: 100%;
+    height: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.content_ButonH {
+    width: 100%;
+    height: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding-right: 20px;
+}
+
+header button {
+    background-color: #8b5e3c;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+header button:hover {
+    background-color: #a47148;
+    font-size: 18px;
+}
+
+/* MAIN */
+main {
+    margin-top: 5px;
+    background-color: rgba(255, 248, 220, 0.95); /* crema claro */
+    width: 80%;
+    height: 80%;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 20px;
+}
+
+.conten_imganima {
+    width: 100%;
+    height: 20%;
+    background: url('imagenes/cabana1.jpg') center/cover no-repeat;
+}
+
+.conten_infoCabañas {
+    width: 80%;
+    height: 59%;
+    margin: 25px;
+    background-color: #fdf5e6;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px;
+}
+.conten_infoCabañas h1{
+    width: auto;
+    height: 5%;
+    text-align: center;
+}
+.Cab1 {
+    width: 50%;
+    height: 100%;
+    background-color: #deb887;
+    border: 2px solid #8b5e3c;
+    border-radius: 10px;
+    padding: 10px;
+     display: flex;
+    flex-direction: column;
+}
+.IMGCAB1{
+    background-color: #3e2f1c;
+    height: 44%;
+    width: auto;
+}
+.InfCab1{
+    background-color: #c5beb5;
+    height: 50%;
+    width: auto;
+}
+.Cab2 {
+    width: 50%;
+    height: 100%;
+    background-color: #deb887;
+    border: 2px solid #8b5e3c;
+    border-radius: 10px;
+    padding: 10px;
+     display: flex;
+    flex-direction: column;
+}
+.InfCab2{
+    background-color: #c5beb5;
+    height: 50%;
+    width: auto;
+}
+.IMGCAB2{
+    background-color: #3e2f1c;
+    height: 44%;
+    width: auto;
+}
+/* MAPA */
+.content_mapa {
+    width: 80%;
+    height: 20%;
+    background-color: #d2b48c;
+    padding: 10px;
+    border-radius: 10px;
+}
+.content_mapa h3 {
+    color: #3e2f1c;
+}
+
+/* FOOTER */
+footer {
+    width: 80%;
+    height: 5%;
+    background-color: #6b4226;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+/* LOGO */
+.LogoH {
+    height: 99%;
+    width: 100%;
+    background-image: url(imagenes/Logo.webp);
+    background-size: 20%;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.conten_imganima {
+    position: relative;
+    width: 100%;
+    height: 30%;
+    overflow: hidden;
+    background: none;
+}
+
+.slideshow {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.slide {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    width: 100%;  
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    z-index: 0;
+    pointer-events: none;
+    transform: scale(0.6);
+}
+.slide.active {
+     z-index: 1;
+    pointer-events: auto;
+    animation: showAnim 4s ease forwards;
+}
+.slide.showing {
+    z-index: 1;
+    animation: showAnim 2s ease forwards;
+}
+.slide.hiding {
+    z-index: 0;
+    animation: hideAnim 2s ease forwards;
+}
+/* Entrada*/
+@keyframes showAnim {
+    0% {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+/* Salida */
+@keyframes hideAnim {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(0.6);
+        opacity: 0;
+    }
+}
+
+
+.slide img {
+    width: 80%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+}
+.conten_infoCabañas img{
+    height: 200px;
+    width: 250px ;
+}
+.InfCa1{
+    width: 100%;
+    height: 500%;
+}
+@media (max-width: 1024px) {
+    body {
+        height: auto;
+    }
+
+    header, main, footer, .content_mapa {
+        width: 95%;
+    }
+
+    .logo {
+        height: auto;
+        padding: 10px 0;
+    }
+
+    .LogoH {
+        width: 150px;
+        height: 150px;
+        background-size: contain;
+    }
+
+    .content_ButonH {
+        flex-wrap: wrap;
+        gap: 5px;
+        padding: 10px;
+    }
+
+    .conten_infoCabañas {
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+    }
+
+    .Cab1, .Cab2 {
+        width: 90%;
+        height: auto;
+        margin-bottom: 15px;
+    }
+
+    .conten_imganima {
+        height: 250px;
+    }
+
+    .slide img {
+        width: 90%;
+        height: auto;
+    }
+
+    .conten_infoCabañas img {
+        width: 100%;
+        height: auto;
+    }
+
+    .InfCa1, .InfCa2 {
+        height: auto;
+        padding: 10px;
+    }
+
+    .content_mapa {
+        height: auto;
+    }
+
+    footer {
+        height: auto;
+        padding: 10px;
+    }
+}
+
+@media (max-width: 600px) {
+    .LogoH {
+        width: 120px;
+        height: 120px;
+    }
+
+    header button {
+        padding: 6px 12px;
+        font-size: 14px;
+    }
+
+    .conten_imganima {
+        height: 180px;
+    }
+
+    .slide img {
+        width: 95%;
+    }
+
+    .Cab1, .Cab2 {
+        width: 100%;
+    }
+
+    .conten_infoCabañas img {
+        height: 180px;
+    }
+}
+
