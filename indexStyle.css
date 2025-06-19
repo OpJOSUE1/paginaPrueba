@@ -287,7 +287,6 @@ footer {
         width: 90%;
         height: 50%;
         margin-bottom: 15px;
-        flex-direction: column;
     }
 
     .conten_imganima {
@@ -340,6 +339,7 @@ footer {
 
     .Cab1, .Cab2 {
         width: 100%;
+        
     }
 
     .conten_infoCabañas img {
