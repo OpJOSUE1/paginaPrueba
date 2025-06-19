@@ -66,7 +66,7 @@ main {
     margin-top: 5px;
     background-color: rgba(255, 248, 220, 0.95); /* crema claro */
     width: 80%;
-    height: 80%;
+    height: 85%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -83,11 +83,11 @@ main {
 
 .conten_infoCabañas {
     width: 90%;
-    height: 50%;
-    margin: 25px;
+    height: 60%;
+    margin-top: 10px;
     background-color: #fdf5e6;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
     gap: 10px;
@@ -100,7 +100,7 @@ main {
     border-radius: 10px;
     padding: 10px;
     width: 100%;
-    height: 50%;
+    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -115,13 +115,14 @@ main {
     width: 100%;
     height: 90%;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    align-items: center;
 }
 .IMGCAB1,
 .IMGCAB2{
     background-color: #3e2f1c;
-    width: 40%;
-    height: 100%;
+    width: 100%;
+    height:50%;
     background-position: center;
     background-repeat: no-repeat;
     background-size: 100%;
@@ -131,15 +132,16 @@ main {
 .InfCab1,
 .InfCab2{
     background-color: #6b4226;
-    width: 60%;
-    height: 100%;
+    width: 100%;
+    height: 50%;
 }
 
 
 /* MAPA */
 .content_mapa {
-    width: 80%;
+    width: 89%;
     height: 20%;
+    margin-top: 15px;
     background-color: #d2b48c;
     padding: 10px;
     border-radius: 10px;
@@ -276,7 +278,7 @@ footer {
     }
 
     .conten_infoCabañas {
-        flex-direction: column;
+        flex-direction: row;
         align-items: center;
         height: 650px;
     }
