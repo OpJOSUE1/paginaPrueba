@@ -26,6 +26,8 @@ header {
     height: 10%;
     display: flex;
     flex-direction: column;
+    border-top: 20px solid #6b4226 ;
+    
 }
 .logo {
     width: 100%;
@@ -160,7 +162,7 @@ main {
 .MasInvoC1 {
     height: 10%;
     margin-top: 15px;
-    align-self: center; /* centra en flex-column */
+    align-self: center; 
     background-color: #8b5e3c;
     color: #fff;
     border: none;
@@ -280,9 +282,9 @@ footer {
 
 
 .slide img {
-    width: 80%;
+    width: 60%;
     height: 100%;
-    object-fit: cover;
+    object-fit: 100%;
     border-radius: 5px;
 }
 .conten_infoCabañas img{
