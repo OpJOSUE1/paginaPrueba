@@ -65,7 +65,7 @@ header button:hover {
 main {
     margin-top: 5px;
     background-color: rgba(255, 248, 220, 0.95); /* crema claro */
-    width: 90%;
+    width: 80%;
     height: 80%;
     display: flex;
     flex-direction: column;
@@ -74,6 +74,7 @@ main {
 }
 
 .conten_imganima {
+    margin-top: 10px;
     width: 100%;
     height: 30%;
     background-color: #3e2f1c;
@@ -88,60 +89,53 @@ main {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     gap: 10px;
     padding: 10px;
 }
-.conten_infoCabañas h1{
-    width:85%;
-    height: 5%;
-    text-align: center;
-    position: absolute;
-}
-.Cab1 {
-    width: 100%;
-    height: 50%;
+.Cab1,
+.Cab2{
     background-color: #deb887;
     border: 2px solid #8b5e3c;
     border-radius: 10px;
     padding: 10px;
-     display: flex;
-    flex-direction: row;
-    
-}
-.IMGCAB1{
-    background-color: #3e2f1c;
-    height: 90%;
-    width: 30%;
-    margin-top: 3%;
-}
-.InfCab1{
-    background-color: #c5beb5;
-    height: 90%;
-    width: 70%;
-    margin-top: 3%;
-}
-.Cab2 {
     width: 100%;
     height: 50%;
-    background-color: #deb887;
-    border: 2px solid #8b5e3c;
-    border-radius: 10px;
-    padding: 10px;
-     display: flex;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.Cab1 h1,
+.Cab2 h1{
+    font-size: 20px;
+    height: 10%;
+}
+.contenINF{
+    background-color: #d2b48c;
+    width: 100%;
+    height: 90%;
+    display: flex;
     flex-direction: row;
 }
+.IMGCAB1,
 .IMGCAB2{
     background-color: #3e2f1c;
-    height: 90%;
-    width: 30%;
-    margin-top: 3%;
+    width: 40%;
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
 }
+.IMGCAB1{background-image: url(imagenes/frenteCabaña.jpg);}
+.IMGCAB2{background-image: url(imagenes/frenteCasa.jpg);}
+.InfCab1,
 .InfCab2{
-    background-color: #c5beb5;
-    height: 90%;
-    width: 70%;
-    margin-top: 3%;
+    background-color: #6b4226;
+    width: 60%;
+    height: 100%;
 }
+
+
 /* MAPA */
 .content_mapa {
     width: 80%;
