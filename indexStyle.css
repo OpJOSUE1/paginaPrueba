@@ -278,7 +278,7 @@ footer {
     }
 
     .conten_infoCabañas {
-        flex-direction: row;
+        flex-direction: column;
         align-items: center;
         height: 650px;
     }
