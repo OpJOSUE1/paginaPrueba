@@ -154,37 +154,33 @@ h2{
 
   .Cuerpo,
   .IMGVID,
-  .IMGCAB1,
-  .cabeza,
-  .c {
+  .cabeza {
     height: auto !important;
   }
 
   .IMGVID {
-    min-height: 200px;
+    min-height: 400px;
     background-color: #3e2f1c;
   }
 
   .IMGCAB1 {
     min-height: 200px;
-    
-    background-size: cover;
-    width: 60%;
+    background-size: 100%;
+    width: 40%;
+    height: 100%;
     background-position: center;
     background-repeat: no-repeat;
     background-color: transparent;
   }
   .InfCab1{
-    width: 100%;
-    height: 200px;
-    word-break: break-word;
-    overflow-y: auto; 
-    padding-right: 10px;
-    scroll-behavior: smooth;
+    width: 60%;
+    height: 100%;
+    border: #3e2f1c solid 1px;
   }
 
   .c {
-    flex-direction: column;
+    height: 500px;
+    flex-direction: row;
     align-items: center;
   }
   .LogoH {
