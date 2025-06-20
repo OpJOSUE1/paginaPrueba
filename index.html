@@ -72,7 +72,7 @@
                     
                 </section >
                 <section class="BTNMA"><button class="MasInvoC1" onclick="location.href='CabañaMadera.html'">Ver Mas</button>
-                <button class="MasInvoC2">Reservar Ahora</button></section>
+                <button class="MasInvoC2" onclick="enviarWhatsAppCabaña()">Reservar Ahora</button></section>
             </section>
             <section class="Cab2">
                 <h1>¡CASA DE CAMPO!</h1>
@@ -91,7 +91,7 @@
                     
                 </section>
                 <section class="BTNMA"><button class="MasInvoC1" onclick="location.href='CasaCampo.html'">Ver Mas</button>
-                <button class="MasInvoC3">Reservar Ahora</button></section>
+                <button class="MasInvoC3" onclick="enviarWhatsAppCasaCampo()">Reservar Ahora</button></section>
             </section>
         </section>
         
@@ -135,6 +135,56 @@
     slides[currentIndex].classList.add('showing');
 
     setInterval(nextSlide, 4000);
+</script>
+<script>
+  function enviarWhatsAppCasaCampo() {
+    const continuar = confirm("¿Quieres enviar un mensaje para reservar por WhatsApp?");
+    if (!continuar) return;
+
+    const nombre = prompt("Por favor, ingresa tu nombre:");
+    if (!nombre || nombre.trim() === "") {
+      alert("Debes ingresar tu nombre.");
+      return;
+    }
+
+    const fecha = prompt("¿Qué fecha quieres reservar? (ejemplo: 25 de julio de 2025)");
+    if (!fecha || fecha.trim() === "") {
+      alert("Debes ingresar una fecha.");
+      return;
+    }
+
+
+    const numero = '4411039625';
+    const mensaje = encodeURIComponent(`Hola, soy ${nombre}. Quisiera reservar la Casa de Campo el dia: ${fecha}. ¿Estará disponible?`);
+    const url = `https://wa.me/${numero}?text=${mensaje}`;
+
+    window.open(url, '_blank'); 
+  }
+</script>
+<script>
+  function enviarWhatsAppCabaña() {
+    const continuar = confirm("¿Quieres enviar un mensaje para reservar por WhatsApp?");
+    if (!continuar) return;
+
+    const nombre = prompt("Por favor, ingresa tu nombre:");
+    if (!nombre || nombre.trim() === "") {
+      alert("Debes ingresar tu nombre.");
+      return;
+    }
+
+    const fecha = prompt("¿Qué fecha quieres reservar? (ejemplo: 25 de julio de 2025)");
+    if (!fecha || fecha.trim() === "") {
+      alert("Debes ingresar una fecha.");
+      return;
+    }
+
+
+    const numero = '4411039625';
+    const mensaje = encodeURIComponent(`Hola, soy ${nombre}. Quisiera reservar la Cabaña de Madera el dia: ${fecha}. ¿Estará disponible?`);
+    const url = `https://wa.me/${numero}?text=${mensaje}`;
+
+    window.open(url, '_blank'); 
+  }
 </script>
  
 </html>

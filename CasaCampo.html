@@ -13,6 +13,7 @@
         </section>
         <section class="content_ButonH">
             <a class="" href="index.html">Inicio</a>
+            <a class="Reserva" id="btnFijo" onclick="enviarWhatsApp()"> Reservar</a>
             
         </section>
     </header>
@@ -50,9 +51,39 @@
         <center>Copyright © 2025 Cabañas Pinal - Todos los derechos reservados.</center>
     </ooter>
 </body>
- <script>
-    window.addEventListener("load", () => {
-      document.body.classList.add("fade-in");
-    });
-  </script>
+<script>
+  function enviarWhatsApp() {
+    const continuar = confirm("¿Quieres enviar un mensaje para reservar por WhatsApp?");
+    if (!continuar) return;
+
+    const nombre = prompt("Por favor, ingresa tu nombre:");
+    if (!nombre || nombre.trim() === "") {
+      alert("Debes ingresar tu nombre.");
+      return;
+    }
+
+    const fecha = prompt("¿Qué fecha quieres reservar? (ejemplo: 25 de julio de 2025)");
+    if (!fecha || fecha.trim() === "") {
+      alert("Debes ingresar una fecha.");
+      return;
+    }
+
+
+    const numero = '4411039625';
+    const mensaje = encodeURIComponent(`Hola, soy ${nombre}. Quisiera reservar la Casa de Campo el dia: ${fecha}. ¿Estará disponible?`);
+    const url = `https://wa.me/${numero}?text=${mensaje}`;
+
+    window.open(url, '_blank'); 
+  }
+</script>
+<script>
+  window.addEventListener('scroll', () => {
+    const btn = document.getElementById('btnFijo');
+    if (window.scrollY > 100) {
+      btn.classList.add('btn-movido');
+    } else {
+      btn.classList.remove('btn-movido');
+    }
+  });
+</script>
 </html>

@@ -16,6 +16,18 @@ body {
     flex-direction: column;
     align-items: center;
 }
+ button {
+    background-color: #8b5e3c;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    height: 100%;
+}
+
 .cabeza{
     background-color: rgba(255, 248, 220, 0.95);
     background-size: cover;
@@ -136,6 +148,11 @@ h2{
     width: 100%;
     background-color: #3e2f1c;
 }
+.btn-movido {
+position: fixed;
+  right: 75px;
+  top: 10px;
+}
 .Pie{
     height: 5%;
     width: 90%;
@@ -146,7 +163,7 @@ h2{
     color: white;
     margin-top: 5px ;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1000px) {
   body {
     height: auto;
     min-height: 100vh;
@@ -154,36 +171,33 @@ h2{
 
   .Cuerpo,
   .IMGVID,
-  .IMGCAB1,
-  .cabeza,
-  .c {
+  .cabeza {
     height: auto !important;
   }
 
   .IMGVID {
-    min-height: 200px;
+    min-height: 400px;
     background-color: #3e2f1c;
   }
 
   .IMGCAB1 {
+    margin-top: 10px;
     min-height: 200px;
-    background-image: url(imagenes/frenteCabaña.jpg);
-    background-size: cover;
-    width: 60%;
+    background-size: contain;
+    width: 100%;
+    height: 50%;
     background-position: center;
     background-repeat: no-repeat;
     background-color: transparent;
   }
   .InfCab1{
     width: 100%;
-    height: 200px;
-    word-break: break-word;
-    overflow-y: auto; 
-    padding-right: 10px;
-    scroll-behavior: smooth;
+    height: 50%;
+    border: #3e2f1c solid 1px;
   }
 
   .c {
+    height: 33%;
     flex-direction: column;
     align-items: center;
   }
@@ -200,6 +214,15 @@ h2{
     text-align: center;
     width: 87%;
   }
+  h1{
+     text-shadow : 43px  16px  25px  #8b5e3c ;
+  }
+  .btn-movido {
+  position: fixed;
+  right: 5px;
+  top: 10px;
+}
+
 }
  @keyframes myAnim {
     0% {
@@ -218,3 +241,4 @@ h2{
   * {
     animation: myAnim 0.9s ease 0s 1 alternate backwards;
   }
+
