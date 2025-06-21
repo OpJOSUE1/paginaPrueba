@@ -144,9 +144,13 @@ h2{
     box-sizing: border-box;
 }
 .IMGVID{
-    height: 57%;
+     height: 57%;
     width: 100%;
-    background-color: #3e2f1c;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0;
+  box-sizing: border-box;
 }
 .btn-movido {
 position: fixed;
@@ -176,8 +180,13 @@ position: fixed;
   }
 
   .IMGVID {
-    min-height: 400px;
-    background-color: #3e2f1c;
+  width: 100%;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0;
+  box-sizing: border-box;
   }
 
   .IMGCAB1 {
@@ -219,8 +228,8 @@ position: fixed;
   }
   .btn-movido {
   position: fixed;
-  right: 5px;
-  top: 10px;
+  right: 3px;
+ 
 }
 
 }
@@ -241,4 +250,68 @@ position: fixed;
   * {
     animation: myAnim 0.9s ease 0s 1 alternate backwards;
   }
+/*aslkdslakflkjhasdlfkjhasdf*/
+.slider-container {
+  width: 90%;
+  max-width: 800px;
+  margin: auto;
+  overflow: hidden;
+  position: relative;
+  height: 90%;
+  align-items: center;
+  object-position: center;
+}
 
+.slider {
+  overflow: hidden;
+}
+
+.slide-track {
+  display: flex;
+  transition: transform 0.4s ease-in-out;
+}
+
+.slide {
+  min-width: 100%;
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  justify-content: center;
+  user-select: none;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.nav-btn {
+  top: 50%;
+  position: absolute; 
+  transform: translateY(-50%);
+  background-color: transparent;
+  border: none;
+  font-size: 2rem;
+  color: black;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 10;
+  transition: background 0.3s;
+  width: 40px;
+  height: 100px;
+}
+
+.nav-btn:hover {
+  background-color: rgba(255, 255, 255, 0.9);
+  color: black;
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}

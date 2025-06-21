@@ -302,7 +302,9 @@ footer {
     header, main, footer, .content_mapa {
         width: 95%;
     }
-
+    header{
+        height: 125px;
+    }
     .logo {
         height: auto;
         padding: 10px 0;
@@ -338,17 +340,20 @@ footer {
     }
     .IMGCAB1, .IMGCAB2{
         width: 60%;
-        background-size: cover;
+        height: 100%;
+        object-fit: contain;
     }
 
     .slide img {
-        width: 90%;
-        height: auto;
+        width: 190%;
+        object-fit: contain;
+        display: block;
     }
 
     .conten_infoCabañas img {
         width: 100%;
         height: auto;
+         object-fit: contain;
     }
 
     .InfCa1, .InfCa2 {

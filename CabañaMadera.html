@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <link rel="stylesheet" href="styleMadera.css">
+    <link rel="stylesheet" href="js.js">
     <title>Cabañas Pinal</title>
 </head>
 <body>
@@ -18,7 +20,7 @@
     </header>
     <main class="Cuerpo">
                    <h1>¡CABAÑA DE MADERA!</h1>                
-                    <section class="c">
+                    <section class="c1">
                         <section class="IMGCAB1"></section>
                     <section class="InfCab1">
                              <p>*  Cuenta Con Un Cuarto Principal Con Cama King Size,  Pichonera Tipo Tapanco con 2 Matrimoniales.</p>
@@ -27,10 +29,7 @@
 
                             <p>* Cocina Pequeña con lo Básico: Parrilla Eléctrica de 2 
                                 Quemadores, Frigobar, Cafetera, Horno de 
-                                Microondas, Licuadora y Utensilios.</p>
-
-                        
-                        
+                                Microondas, Licuadora y Utensilios.</p>   
                             <p>*  Comedor.</p>
 
                             <p>*  Sala con Chimenea, Incluye una Carga de Leña por Noche.</p>
@@ -41,11 +40,26 @@
                              <p >*  Estacionamiento para un carro, en estacionamiento está fuera del establecimiento pero es totalmente seguro con cámara de seguridad las 24 horas.</p>
                         </section> 
                     </section>
-                    <h2>Fotos y Videos</h2>
-                    <section class="IMGVID">
-                        
-  
-                    </section>
+                    <h2>Fotos</h2>
+<section class="IMGVID">
+  <section class="slider-container">
+    <button class="nav-btn prev" id="prevBtn">&#10094;</button>
+    
+    <div class="slider" id="slider">
+      <div class="slide-track" id="slide-track">
+        <div class="slide"><img src="imagenes/Madera/img1.jpg" /></div>
+        <div class="slide"><img src="imagenes/Madera/img2.jpg" /></div>
+        <div class="slide"><img src="imagenes/Madera/img3.jpg" /></div>
+        <div class="slide"><img src="imagenes/Madera/img4.jpg" /></div>
+        <div class="slide"><img src="imagenes/Madera/img5.jpg" /></div>
+        <div class="slide"><img src="imagenes/Madera/img6.jpg" /></div>
+        <div class="slide"><img src="imagenes/Madera/img8.jpg" /></div>
+      </div>
+    </div>
+
+    <button class="nav-btn next" id="nextBtn">&#10095;</button>
+  </section>
+</section>
                     
 
     </main>
@@ -93,5 +107,77 @@
     }
   });
 </script>
+<script>
+  const track = document.getElementById('slide-track');
+  const slides = document.querySelectorAll('.slide');
+  const prevBtn = document.getElementById('prevBtn');
+  const nextBtn = document.getElementById('nextBtn');
+  let index = 0;
+
+  const setPositionByIndex = () => {
+    const slideWidth = slides[0].offsetWidth;
+    track.style.transform = `translateX(-${index * slideWidth}px)`;
+  };
+
   
+  prevBtn.addEventListener('click', () => {
+    if (index > 0) index--;
+    setPositionByIndex();
+  });
+
+  nextBtn.addEventListener('click', () => {
+    if (index < slides.length - 1) index++;
+    setPositionByIndex();
+  });
+
+
+  let isDragging = false;
+  let startX = 0;
+  let currentTranslate = 0;
+
+  const touchStart = (x) => {
+    isDragging = true;
+    startX = x;
+    currentTranslate = -index * slides[0].offsetWidth;
+  };
+
+  const touchMove = (x) => {
+    if (!isDragging) return;
+    const deltaX = x - startX;
+    track.style.transform = `translateX(${currentTranslate + deltaX}px)`;
+  };
+
+  const touchEnd = (x) => {
+    if (!isDragging) return;
+    const deltaX = x - startX;
+    const threshold = slides[0].offsetWidth * 0.25;
+
+    if (deltaX > threshold && index > 0) index--;
+    else if (deltaX < -threshold && index < slides.length - 1) index++;
+
+    setPositionByIndex();
+    isDragging = false;
+  };
+
+  
+  track.addEventListener('mousedown', e => touchStart(e.clientX));
+  track.addEventListener('mousemove', e => touchMove(e.clientX));
+  track.addEventListener('mouseup', e => touchEnd(e.clientX));
+  track.addEventListener('mouseleave', e => touchEnd(e.clientX));
+
+  
+  track.addEventListener('touchstart', e => touchStart(e.touches[0].clientX));
+  track.addEventListener('touchmove', e => touchMove(e.touches[0].clientX));
+  track.addEventListener('touchend', e => touchEnd(e.changedTouches[0].clientX));
+
+  
+  window.addEventListener('resize', setPositionByIndex);
+
+ 
+  setPositionByIndex();
+  setInterval(() => {
+  index = (index + 1) % slides.length; 
+  setPositionByIndex();
+}, 10000); 
+</script>
 </html>

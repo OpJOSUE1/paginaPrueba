@@ -41,9 +41,24 @@
                     </section>
                     <h2>Fotos y Videos</h2>
                     <section class="IMGVID">
-                        
-  
-                    </section>
+  <section class="slider-container">
+    <button class="nav-btn prev" id="prevBtn">&#10094;</button>
+    
+    <div class="slider" id="slider">
+      <div class="slide-track" id="slide-track">
+        <div class="slide"><img src="imagenes/Campo/img1.jpg" /></div>
+        <div class="slide"><img src="imagenes/Campo/img2.jpg" /></div>
+        <div class="slide"><img src="imagenes/Campo/img3.jpg" /></div>
+        <div class="slide"><img src="imagenes/Campo/img4.jpg" /></div>
+        <div class="slide"><img src="imagenes/Campo/img5.jpg" /></div>
+        <div class="slide"><img src="imagenes/Campo/img6.jpg" /></div>
+        <div class="slide"><img src="imagenes/Campo/img7.jpg" /></div>
+      </div>
+    </div>
+
+    <button class="nav-btn next" id="nextBtn">&#10095;</button>
+  </section>
+</section>
                     
 
     </main>
@@ -85,5 +100,78 @@
       btn.classList.remove('btn-movido');
     }
   });
+</script>
+<script>
+  const track = document.getElementById('slide-track');
+  const slides = document.querySelectorAll('.slide');
+  const prevBtn = document.getElementById('prevBtn');
+  const nextBtn = document.getElementById('nextBtn');
+  let index = 0;
+
+  const setPositionByIndex = () => {
+    const slideWidth = slides[0].offsetWidth;
+    track.style.transform = `translateX(-${index * slideWidth}px)`;
+  };
+
+  
+  prevBtn.addEventListener('click', () => {
+    if (index > 0) index--;
+    setPositionByIndex();
+  });
+
+  nextBtn.addEventListener('click', () => {
+    if (index < slides.length - 1) index++;
+    setPositionByIndex();
+  });
+
+
+  let isDragging = false;
+  let startX = 0;
+  let currentTranslate = 0;
+
+  const touchStart = (x) => {
+    isDragging = true;
+    startX = x;
+    currentTranslate = -index * slides[0].offsetWidth;
+  };
+
+  const touchMove = (x) => {
+    if (!isDragging) return;
+    const deltaX = x - startX;
+    track.style.transform = `translateX(${currentTranslate + deltaX}px)`;
+  };
+
+  const touchEnd = (x) => {
+    if (!isDragging) return;
+    const deltaX = x - startX;
+    const threshold = slides[0].offsetWidth * 0.25;
+
+    if (deltaX > threshold && index > 0) index--;
+    else if (deltaX < -threshold && index < slides.length - 1) index++;
+
+    setPositionByIndex();
+    isDragging = false;
+  };
+
+  
+  track.addEventListener('mousedown', e => touchStart(e.clientX));
+  track.addEventListener('mousemove', e => touchMove(e.clientX));
+  track.addEventListener('mouseup', e => touchEnd(e.clientX));
+  track.addEventListener('mouseleave', e => touchEnd(e.clientX));
+
+  
+  track.addEventListener('touchstart', e => touchStart(e.touches[0].clientX));
+  track.addEventListener('touchmove', e => touchMove(e.touches[0].clientX));
+  track.addEventListener('touchend', e => touchEnd(e.changedTouches[0].clientX));
+
+  
+  window.addEventListener('resize', setPositionByIndex);
+
+ 
+  setPositionByIndex();
+  setInterval(() => {
+  index = (index + 1) % slides.length; 
+  setPositionByIndex();
+}, 10000); 
 </script>
 </html>
