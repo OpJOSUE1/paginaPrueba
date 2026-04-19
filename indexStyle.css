@@ -109,9 +109,9 @@ main {
 }
 .Cab1 h1,
 .Cab2 h1{
-    font-size: 20px;
+    font-size: 25px;
     height: 10%;
-    text-decoration: overline solid;
+   
     text-shadow : 43px  16px  13px  #8b5e3c ;
 }
 .contenINF{
