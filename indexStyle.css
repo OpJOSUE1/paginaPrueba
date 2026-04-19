@@ -474,3 +474,21 @@ footer {
     font-style: italic;
     color: #b22222; /* Rojo oscuro para resaltar advertencia */
 }
+@media (max-width: 600px) {
+    .normas-container {
+        width: 85%; /* Ajusta el ancho para que no se salga de la pantalla */
+        height: auto; /* IMPORTANTE: Deja que el contenido defina el largo */
+        padding: 15px;
+        margin: 10px auto;
+    }
+
+    .norma-item {
+        width: 100% !important; /* En celular, que cada norma ocupe todo el ancho */
+        margin-bottom: 10px;
+    }
+
+    /* Ajuste para el body que tiene altura fija */
+    body {
+        height: auto; /* Esto evita que el contenido se corte al final */
+    }
+}
