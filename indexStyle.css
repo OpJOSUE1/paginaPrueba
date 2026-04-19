@@ -433,3 +433,44 @@ footer {
     display: flex;
     flex-direction: row;
 }
+.normas-container {
+    width: 90%;
+    background-color: #fdf5e6; /* Tono crema como tus secciones actuales */
+    /* border-left: 10px solid #6b4226; Borde café oscuro */
+    margin: 20px 0;
+    /* padding: 20px; */
+    
+}
+
+.normas-container h2 {
+    color: #3e2f1c;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.normas-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: space-around;
+}
+
+.norma-item {
+    background-color: rgba(222, 184, 135, 0.3); /* Color madera claro */
+    padding: 15px;
+    border-radius: 8px;
+    width: 45%;
+    min-width: 280px;
+    font-family: 'Georgia', serif;
+}
+
+.norma-item ul {
+    margin-top: 10px;
+    padding-left: 20px;
+}
+
+.damage {
+    border: 1px dashed #8b5e3c;
+    font-style: italic;
+    color: #b22222; /* Rojo oscuro para resaltar advertencia */
+}
